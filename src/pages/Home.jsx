@@ -1,16 +1,10 @@
 import React, {useState, useEffect} from 'react'
 import appwriteService from '../appwrite/config'
 import {Container, PostCard} from '../components/index'
+import {useSelector} from "react-redux"
 
 function Home() {
-     const [posts, setPosts] = useState([])
-     useEffect(() => {
-        appwriteService.getPosts().then((posts) => {
-            if(posts) {
-                setPosts(posts.documents)
-            }
-        })
-     }, [])
+     const {posts} = useSelector((state) => state.post)
 
      if(posts.length === 0) {
         return (

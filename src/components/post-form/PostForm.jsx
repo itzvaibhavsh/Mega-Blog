@@ -4,6 +4,8 @@ import { Button, Input, RTE, Select } from "..";
 import appwriteService from "../../appwrite/config";
 import { useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
+import {useDispatch} from "react-redux"
+import {postUpload} from "../../store/postSlice"
 
 export default function PostForm({ post }) {
     const { register, handleSubmit, watch, setValue, control, getValues } = useForm({
@@ -17,7 +19,7 @@ export default function PostForm({ post }) {
 
     const navigate = useNavigate();
     const userData = useSelector((state) => state.auth.userData);
-    console.log("userData:", userData)
+    const dispatch = useDispatch()
 
     const submit = async (data) => {
         if (post) {
@@ -33,6 +35,7 @@ export default function PostForm({ post }) {
             });
 
             if (dbPost) {
+                dispatch(postUpload({postData: dbPost}))
                 navigate(`/post/${dbPost.$id}`);
             }
         } else {
@@ -44,12 +47,13 @@ export default function PostForm({ post }) {
                 const dbPost = await appwriteService.createPost({ ...data, userId: userData.$id });
 
                 if (dbPost) {
+                    dispatch(postUpload({postData: dbPost}))
                     navigate(`/post/${dbPost.$id}`);
                 }
             }
         }
     };
-
+// useCallback keeps the function reference same throught any change in the function until change in dependency. 
     const slugTransform = useCallback((value) => {
         if (value && typeof value === "string")
             return value
@@ -61,13 +65,16 @@ export default function PostForm({ post }) {
         return "";
     }, []);
 
+// as soon as this component is mounted, useEffect runs, and a watch as event listener is attached. React-hook-form keep an eye
+// on this watch constantly. The cleanup part is the reference of a function no a return value. React registers this in 
+// the backhood as a cleanup task which will be executed when: route change, page close, dependency array changes. 
     React.useEffect(() => {
         const subscription = watch((value, { name }) => {
             if (name === "title") {
                 setValue("slug", slugTransform(value.title), { shouldValidate: true });
             }
         });
-
+     // cleanup
         return () => subscription.unsubscribe();
     }, [watch, slugTransform, setValue]);
 
