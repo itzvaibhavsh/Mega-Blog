@@ -58,4 +58,42 @@ The application is fully deployed in production using **Vercel** and integrates 
 
 ## 📂 Project Structure
 
-src/ ├── appwrite/       # Appwrite service logic ├── components/     # Reusable UI components ├── pages/          # Route-level components ├── store/          # Redux store & slices ├── conf.js         # Environment configuration ├── App.jsx └── main.jsx
+Mega-Blog/
+│
+├── public/
+│
+├── src/
+│   ├── appwrite/              # Appwrite service layer (Auth, DB, Storage logic)
+│   │
+│   ├── components/            # Reusable UI components
+│   │   ├── Header/Header.jsx
+│   │   ├── Footer/Footer.jsx
+│   │   ├── post-form/PostForm.jsx
+│   │   ├── Button.jsx
+│   │   ├── Input.jsx
+│   │   ├── PostCard.jsx
+│   │   ├── RTE.jsx
+│   │   └── ...
+│   │
+│   ├── pages/                 # Route-level pages
+│   │   ├── Home.jsx
+│   │   ├── Login.jsx
+│   │   ├── Signup.jsx
+│   │   ├── AddPost.jsx
+│   │   ├── EditPost.jsx
+│   │   ├── AllPosts.jsx
+│   │   └── Post.jsx
+│   │
+│   ├── store/                 # Redux store & slices
+│   │   ├── authSlice.js
+│   │   ├── postSlice.js
+│   │   └── store.js
+│   │
+│   ├── conf.js                # Environment configuration
+│   ├── App.jsx                # Main app component
+│   ├── main.jsx               # Entry point
+│   └── index.css
+│
+├── package.json
+├── vite.config.js
+└── README.md
