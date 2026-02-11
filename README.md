@@ -58,22 +58,22 @@ The application is fully deployed in production using **Vercel** and integrates 
 
 ## 📂 Project Structure
 
+```
 Mega-Blog/
 │
 ├── public/
 │
 ├── src/
-│   ├── appwrite/              # Appwrite service layer (Auth, DB, Storage logic)
+│   ├── appwrite/              # Appwrite service layer (Auth, DB, Storage)
 │   │
 │   ├── components/            # Reusable UI components
-│   │   ├── Header/Header.jsx
-│   │   ├── Footer/Footer.jsx
-│   │   ├── post-form/PostForm.jsx
+│   │   ├── Header/
+│   │   ├── Footer/
 │   │   ├── Button.jsx
 │   │   ├── Input.jsx
 │   │   ├── PostCard.jsx
 │   │   ├── RTE.jsx
-│   │   └── ...
+│   │   └── PostForm.jsx
 │   │
 │   ├── pages/                 # Route-level pages
 │   │   ├── Home.jsx
@@ -97,3 +97,4 @@ Mega-Blog/
 ├── package.json
 ├── vite.config.js
 └── README.md
+```
