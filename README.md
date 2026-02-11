@@ -57,3 +57,5 @@ The application is fully deployed in production using **Vercel** and integrates 
 ---
 
 ## 📂 Project Structure
+
+src/ ├── appwrite/       # Appwrite service logic ├── components/     # Reusable UI components ├── pages/          # Route-level components ├── store/          # Redux store & slices ├── conf.js         # Environment configuration ├── App.jsx └── main.jsx
