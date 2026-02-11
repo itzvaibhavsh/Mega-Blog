@@ -2,7 +2,7 @@
 
 A modern full-stack blogging platform built with **React + Appwrite**, featuring authentication, protected routes, rich text editing, image uploads, and production deployment.
 
-🔗 **Live Demo:** https://your-vercel-link.vercel.app  
+🔗 **Live Demo:** https://mega-blog-ofk41kfkk-itzvaibhavshs-projects.vercel.app  
 🔗 **Backend Services:** Appwrite Cloud  
 
 ---
