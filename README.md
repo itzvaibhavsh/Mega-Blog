@@ -1,16 +1,59 @@
-# React + Vite
+# 🚀 Mega Blog – Full-Stack Blog Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A production-ready blog platform built using **React, Redux Toolkit, TailwindCSS, and Appwrite**, featuring authentication, protected routes, rich text editing, and cloud storage integration.
 
-Currently, two official plugins are available:
+🌐 **Live Demo:**  
+👉 https://mega-blog-eight-rosy.vercel.app
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 📌 Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Mega Blog is a modern full-featured blog application that allows users to:
 
-## Expanding the ESLint configuration
+- Sign up and log in securely
+- Create, edit, and delete blog posts
+- Upload and manage images
+- Use a rich-text editor for formatted content
+- Access protected routes based on authentication
+- Persist state using Redux Toolkit
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+The application is fully deployed in production using **Vercel** and integrates with **Appwrite Cloud** for backend services.
+
+---
+
+## 🛠 Tech Stack
+
+### Frontend
+- React 19
+- Redux Toolkit
+- React Router DOM
+- React Hook Form
+- TailwindCSS
+- TinyMCE Rich Text Editor
+
+### Backend (BaaS)
+- Appwrite Cloud
+  - Authentication
+  - Database
+  - Storage (Image Uploads)
+
+### Deployment
+- Vercel (Frontend Hosting)
+- Appwrite Cloud (Backend Services)
+
+---
+
+## ✨ Features
+
+- 🔐 User Authentication (Signup/Login)
+- 🛡 Protected Routes
+- 📝 Create / Edit / Delete Posts
+- 🖼 Image Upload via Appwrite Storage
+- 🧠 Global State Management with Redux
+- 📄 Rich Text Editing with TinyMCE
+- ☁ Production Deployment (Vercel + Appwrite)
+
+---
+
+## 📂 Project Structure
